@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { LogoIcon } from "@/components/Icons";
+import { Mascot, MascotHead, MascotPeek } from "@/components/Mascot";
+import { ProcessAnimation, ProcessAnimationStyles } from "@/components/ProcessAnimation";
 
 /* ─────────────── Navigation ─────────────── */
 function Nav() {
@@ -127,39 +129,11 @@ function Hero() {
           </div>
         </div>
 
-        {/* Phone mockup */}
-        <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2">
-          <div className="w-64 h-[500px] bg-white/10 backdrop-blur-sm rounded-[2.5rem] border border-white/20 p-3 shadow-2xl">
-            <div className="w-full h-full bg-white rounded-[2rem] p-4 flex flex-col">
-              <div className="flex items-center gap-2 mb-4">
-                <LogoIcon className="w-6 h-6" />
-                <span className="text-xs font-bold text-navy">CoolLog</span>
-              </div>
-              <div className="bg-ice rounded-xl p-3 mb-3">
-                <p className="text-[10px] font-semibold text-navy mb-1">Anlæg #KL-4821</p>
-                <p className="text-[9px] text-navy-400">Carrier 30XA · 12,5 kg R410A</p>
-                <p className="text-[9px] text-navy-400">PED Kategori II</p>
-              </div>
-              <div className="space-y-2 flex-1">
-                <div className="bg-teal/5 rounded-lg p-2.5 border-l-2 border-teal">
-                  <p className="text-[9px] font-semibold text-teal">Eftersyn</p>
-                  <p className="text-[8px] text-navy-400">19. mar 2026 · Tekn. J. Andersen</p>
-                </div>
-                <div className="bg-mint/5 rounded-lg p-2.5 border-l-2 border-mint">
-                  <p className="text-[9px] font-semibold text-mint-700">Lækagekontrol</p>
-                  <p className="text-[8px] text-navy-400">15. jan 2026 · Tekn. M. Petersen</p>
-                </div>
-                <div className="bg-navy/5 rounded-lg p-2.5 border-l-2 border-navy-200">
-                  <p className="text-[9px] font-semibold text-navy">Reparation</p>
-                  <p className="text-[8px] text-navy-400">02. dec 2025 · Tekn. J. Andersen</p>
-                </div>
-              </div>
-              <div className="mt-3">
-                <div className="w-full py-2.5 bg-teal rounded-lg text-center">
-                  <span className="text-[10px] font-bold text-white">+ Ny journalpost</span>
-                </div>
-              </div>
-            </div>
+        {/* Mascot illustration */}
+        <div className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 flex-col items-center">
+          <Mascot className="w-56 h-56 drop-shadow-2xl" waving={true} withPhone={true} />
+          <div className="glass rounded-xl px-4 py-2 mt-2 text-center">
+            <p className="text-white/80 text-xs font-medium">Scan. Log. Færdig!</p>
           </div>
         </div>
       </div>
@@ -204,6 +178,11 @@ function Problem() {
             en udstyrsjournal ved anlægget. I dag er det papir i en plastlomme —
             og det skaber reelle problemer.
           </p>
+        </div>
+
+        {/* Mascot peeking between the two columns */}
+        <div className="hidden md:flex justify-center -mb-4">
+          <MascotHead className="w-16 h-16 opacity-60" />
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -353,55 +332,43 @@ function Features() {
   );
 }
 
-/* ─────────────── How it works ─────────────── */
+/* ─────────────── How it works (with animation) ─────────────── */
 function HowItWorks() {
-  const steps = [
-    {
-      num: "01",
-      title: "QR-label monteres",
-      desc: "Fysisk QR-kode med unikt ID monteres på køleanlægget og bindes til serienummer og stamdata.",
-      color: "bg-teal",
-    },
-    {
-      num: "02",
-      title: "Tekniker scanner",
-      desc: "Teknikeren scanner QR-koden med sin mobil. Ingen app — det hele åbner direkte i browseren.",
-      color: "bg-teal-600",
-    },
-    {
-      num: "03",
-      title: "Login med OTP",
-      desc: "Teknikeren logger ind med email og engangskode. Sikkert, hurtigt og uden password at huske.",
-      color: "bg-navy-400",
-    },
-    {
-      num: "04",
-      title: "Log eftersyn",
-      desc: "Vælg type (eftersyn, lækagekontrol, reparation), udfyld felter, vedhæft foto — færdig.",
-      color: "bg-navy",
-    },
-  ];
-
   return (
     <section id="saadan-virker-det" className="py-20 md:py-28 bg-white">
+      <ProcessAnimationStyles />
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-4">
-            Sådan virker det
-          </h2>
+        <div className="text-center mb-12">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <MascotHead className="w-12 h-12" />
+            <h2 className="text-3xl md:text-4xl font-extrabold text-navy">
+              Sådan virker det
+            </h2>
+          </div>
           <p className="text-lg text-navy-400 max-w-2xl mx-auto">
             Fra QR-kode til journalpost på under 30 sekunder.
+            <br />
+            <span className="text-sm text-navy-300">Se vores montør gennemgå processen herunder.</span>
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-6">
-          {steps.map((s, i) => (
+        <div className="max-w-2xl mx-auto">
+          <ProcessAnimation />
+        </div>
+
+        {/* Text steps below animation */}
+        <div className="grid md:grid-cols-4 gap-6 mt-16">
+          {[
+            { num: "01", title: "QR-label monteres", desc: "Fysisk QR-kode med unikt ID monteres på køleanlægget og bindes til serienummer.", color: "bg-teal" },
+            { num: "02", title: "Tekniker scanner", desc: "Teknikeren scanner QR-koden med sin mobil. Ingen app — direkte i browseren.", color: "bg-teal-600" },
+            { num: "03", title: "Login med OTP", desc: "Teknikeren logger ind med email og engangskode. Sikkert og hurtigt.", color: "bg-navy-400" },
+            { num: "04", title: "Log eftersyn", desc: "Vælg type, udfyld felter, vedhæft foto — færdig på 30 sekunder.", color: "bg-navy" },
+          ].map((s, i) => (
             <div key={s.num} className="relative">
-              {/* Connector line */}
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-teal/30 to-teal/10" />
+              {i < 3 && (
+                <div className="hidden md:block absolute top-7 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-teal/30 to-teal/10" />
               )}
-              <div className={`w-14 h-14 ${s.color} rounded-2xl flex items-center justify-center mb-5`}>
+              <div className={`w-14 h-14 ${s.color} rounded-2xl flex items-center justify-center mb-4`}>
                 <span className="text-white font-bold text-lg">{s.num}</span>
               </div>
               <h3 className="text-lg font-bold text-navy mb-2">{s.title}</h3>
@@ -680,6 +647,11 @@ function CTA() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-mint/10 rounded-full blur-3xl" />
 
       <div className="max-w-3xl mx-auto px-6 text-center relative">
+        {/* Mascot peeking from the side */}
+        <div className="hidden lg:block absolute -right-32 top-0">
+          <MascotPeek className="w-28 opacity-80" side="right" />
+        </div>
+
         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
           Klar til at digitalisere jeres udstyrsjournaler?
         </h2>
