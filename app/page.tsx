@@ -35,6 +35,12 @@ function Nav() {
             </a>
           ))}
           <a
+            href="/demo"
+            className="px-5 py-2.5 bg-mint text-navy text-sm font-bold rounded-lg hover:bg-mint-400 transition-colors"
+          >
+            Prøv demo
+          </a>
+          <a
             href="#kontakt"
             className="px-5 py-2.5 bg-teal text-white text-sm font-semibold rounded-lg hover:bg-teal-600 transition-colors"
           >
@@ -71,6 +77,13 @@ function Nav() {
               {l.label}
             </a>
           ))}
+          <a
+            href="/demo"
+            className="block w-full text-center px-5 py-2.5 bg-mint text-navy text-sm font-bold rounded-lg"
+            onClick={() => setOpen(false)}
+          >
+            Prøv demo
+          </a>
           <a
             href="#kontakt"
             className="block w-full text-center px-5 py-2.5 bg-teal text-white text-sm font-semibold rounded-lg"
@@ -115,16 +128,16 @@ function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="#kontakt"
+              href="/demo"
               className="inline-flex items-center justify-center px-8 py-4 bg-mint text-navy font-bold rounded-xl hover:bg-mint-400 transition-colors text-base"
             >
-              Book en gratis demo
+              Prøv det selv
             </a>
             <a
-              href="#saadan-virker-det"
+              href="#kontakt"
               className="inline-flex items-center justify-center px-8 py-4 glass text-white font-semibold rounded-xl hover:bg-white/15 transition-colors text-base"
             >
-              Se hvordan det virker
+              Book en gratis demo
             </a>
           </div>
         </div>
