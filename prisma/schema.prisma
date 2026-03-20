@@ -1,0 +1,132 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  id        String   @id @default(cuid())
+  name      String
+  domain    String?
+  logo      String?
+  color     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users     User[]
+  entries   JournalEntry[]
+  equipment EquipmentCompany[]
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  phone     String?
+  role      String
+  companyId String?
+  company   Company? @relation(fields: [companyId], references: [id])
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  otpCodes  OtpCode[]
+  sessions  Session[]
+  entries   JournalEntry[]
+}
+
+model OtpCode {
+  id        String   @id @default(cuid())
+  code      String
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+}
+
+model Equipment {
+  id               String   @id @default(cuid())
+  qrCode           String   @unique
+  serial           String   @unique
+  manufacturer     String
+  model            String
+  refrigerant      String
+  chargeKg         Float
+  pedCategory      String
+  location         String
+  address          String?
+  ownerId          String?
+  owner            Owner?   @relation(fields: [ownerId], references: [id])
+  installationDate DateTime
+  nextInspection   DateTime?
+  status           String   @default("active")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  entries   JournalEntry[]
+  companies EquipmentCompany[]
+}
+
+model Owner {
+  id        String   @id @default(cuid())
+  name      String
+  cvr       String?
+  email     String?
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  equipment Equipment[]
+}
+
+model EquipmentCompany {
+  id          String    @id @default(cuid())
+  equipmentId String
+  equipment   Equipment @relation(fields: [equipmentId], references: [id])
+  companyId   String
+  company     Company   @relation(fields: [companyId], references: [id])
+  active      Boolean   @default(true)
+  startDate   DateTime  @default(now())
+  endDate     DateTime?
+
+  @@unique([equipmentId, companyId])
+}
+
+model JournalEntry {
+  id               String    @id @default(cuid())
+  equipmentId      String
+  equipment        Equipment @relation(fields: [equipmentId], references: [id])
+  userId           String
+  user             User      @relation(fields: [userId], references: [id])
+  companyId        String
+  company          Company   @relation(fields: [companyId], references: [id])
+  type             String
+  notes            String
+  refrigerantAdded Float?
+  photoUrl         String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model Reminder {
+  id          String    @id @default(cuid())
+  equipmentId String
+  type        String
+  dueDate     DateTime
+  sentAt      DateTime?
+  dismissed   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+}
