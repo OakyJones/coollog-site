@@ -1,11 +1,11 @@
-# CoolLog — Landingsside
+# RefiLog — Landingsside
 
-B2B landingsside for CoolLog, bygget med Next.js 14 + Tailwind CSS.
+B2B landingsside for RefiLog, bygget med Next.js 14 + Tailwind CSS.
 
 ## Kom i gang
 
 ```bash
-cd coollog-site
+cd refilog-site
 npm install
 npm run dev
 ```

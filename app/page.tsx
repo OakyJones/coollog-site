@@ -20,7 +20,7 @@ function Nav() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
           <LogoIcon className="w-9 h-9" />
-          <span className="text-xl font-bold text-navy">CoolLog</span>
+          <span className="text-xl font-bold text-navy">RefiLog</span>
         </a>
 
         {/* Desktop */}
@@ -121,7 +121,7 @@ function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-teal-200 leading-relaxed mb-10 max-w-2xl">
-            CoolLog er den digitale udstyrsjournal der følger anlægget — ikke
+            RefiLog er den digitale udstyrsjournal der følger anlægget — ikke
             virksomheden. Jeres teknikere scanner en QR-kode og logger eftersyn
             direkte fra mobilen. I jeres eget brand.
           </p>
@@ -225,7 +225,7 @@ function Problem() {
           {/* Solutions */}
           <div className="space-y-5">
             <h3 className="text-sm font-bold text-teal uppercase tracking-wider mb-4">
-              Med CoolLog
+              Med RefiLog
             </h3>
             {[
               "Historikken følger anlægget — permanent og digitalt",
@@ -409,7 +409,7 @@ function WhiteLabel() {
               <span className="text-mint">Vores platform.</span>
             </h2>
             <p className="text-lg text-teal-200 leading-relaxed mb-8">
-              CoolLog kører som white label — jeres kunder ser jeres logo, jeres
+              RefiLog kører som white label — jeres kunder ser jeres logo, jeres
               farver og jeres domæne. Vi leverer teknologien, I leverer
               kunderelationen.
             </p>
@@ -419,7 +419,7 @@ function WhiteLabel() {
                 "Eget logo og farvepalette",
                 "Eget domæne (f.eks. journal.jeresfirma.dk)",
                 "Jeres brand på QR-labels",
-                "Kunden ser aldrig CoolLog-brandet",
+                "Kunden ser aldrig RefiLog-brandet",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-mint/20 flex items-center justify-center flex-shrink-0">
@@ -458,7 +458,7 @@ function WhiteLabel() {
                 </div>
               </div>
               <p className="text-center text-white/50 text-xs mt-4">
-                Powered by CoolLog
+                Powered by RefiLog
               </p>
             </div>
           </div>
@@ -670,7 +670,7 @@ function CTA() {
         </h2>
         <p className="text-lg text-teal-200 mb-10 max-w-2xl mx-auto leading-relaxed">
           Vi tilbyder en gratis pilot med de første 10 anlæg, så I kan opleve
-          CoolLog i praksis — helt uden risiko.
+          RefiLog i praksis — helt uden risiko.
         </p>
 
         <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/15 p-8 max-w-lg mx-auto">
@@ -727,7 +727,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2.5">
             <LogoIcon className="w-8 h-8" />
-            <span className="text-lg font-bold text-white">CoolLog</span>
+            <span className="text-lg font-bold text-white">RefiLog</span>
           </div>
 
           <div className="text-center md:text-right">

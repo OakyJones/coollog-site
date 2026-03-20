@@ -168,7 +168,7 @@ export default function DemoPage() {
         <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
             <LogoIcon className="w-7 h-7" />
-            <span className="text-base font-bold text-navy">CoolLog</span>
+            <span className="text-base font-bold text-navy">RefiLog</span>
             <span className="text-[10px] bg-mint/15 text-teal font-semibold px-2 py-0.5 rounded-full">
               DEMO
             </span>
@@ -242,7 +242,7 @@ export default function DemoPage() {
           Dette er en interaktiv demo med fiktive data. Ingen data gemmes.
           <br />
           <a href="/" className="text-teal hover:underline">
-            ← Tilbage til coollog.dk
+            ← Tilbage til refilog.dk
           </a>
         </div>
       </div>
@@ -281,7 +281,7 @@ function ScanStep({ onScan, progress }: { onScan: () => void; progress: number }
       <div className="pt-4">
         <MascotHead className="w-20 h-20 mx-auto mb-4" />
         <h1 className="text-2xl font-extrabold text-navy mb-2">
-          Velkommen til CoolLog Demo
+          Velkommen til RefiLog Demo
         </h1>
         <p className="text-sm text-navy-400">
           Prøv hele teknikeroplevelsen — fra QR-scanning til logget eftersyn.
@@ -537,7 +537,7 @@ function OtpCodeStep({
             <div className="w-6 h-6 bg-teal rounded flex items-center justify-center">
               <LogoIcon className="w-4 h-4" />
             </div>
-            <span className="text-xs font-medium text-navy">CoolLog</span>
+            <span className="text-xs font-medium text-navy">RefiLog</span>
             <span className="text-[10px] text-navy-300 ml-auto">lige nu</span>
           </div>
           <p className="text-xs text-navy-400 mb-1">Din engangskode er:</p>
@@ -924,7 +924,7 @@ function SuccessStep({
           href="/#kontakt"
           className="block w-full py-3.5 bg-mint text-navy font-bold rounded-xl hover:bg-mint-400 transition-colors text-center"
         >
-          Vil I prøve CoolLog? Book demo
+          Vil I prøve RefiLog? Book demo
         </a>
       </div>
     </div>

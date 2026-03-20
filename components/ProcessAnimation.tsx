@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 /**
- * Animated 4-step process showing the CoolLog mascot
+ * Animated 4-step process showing the RefiLog mascot
  * performing a QR scan → OTP login → logging an inspection.
  * Auto-advances every 3s with manual controls.
  */
@@ -242,7 +242,7 @@ function AnimatedMascot({ step }: { step: number }) {
         <path d="M72 48 C72 42 78 30 100 28 C122 30 128 42 128 48 L124 50 C124 50 116 47 100 47 C84 47 76 50 76 50 Z" fill="#1A1F3D" />
         <path d="M74 48 C74 48 82 51 100 51 C118 51 126 48 126 48 C126 48 120 45 100 45 C80 45 74 48 74 48Z" fill="#028090" />
         <circle cx="100" cy="22" r="7" fill="#00C9A7" />
-        <text x="100" y="41" textAnchor="middle" fill="#00C9A7" fontSize="9" fontWeight="800" fontFamily="system-ui, sans-serif">CL</text>
+        <text x="100" y="41" textAnchor="middle" fill="#00C9A7" fontSize="9" fontWeight="800" fontFamily="system-ui, sans-serif">RL</text>
 
         {/* Left arm - waving on step 3, otherwise resting/pointing */}
         {step === 3 ? (

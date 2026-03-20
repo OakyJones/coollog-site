@@ -1,8 +1,8 @@
 "use client";
 
 /**
- * CoolLog Mascot — Venlig kølemontør i flat design
- * Rund karakter med vinterhue (CL-logo), sikkerhedsbriller,
+ * RefiLog Mascot — Venlig kølemontør i flat design
+ * Rund karakter med vinterhue (RL-logo), sikkerhedsbriller,
  * termometer i brystlomme, telefon/QR-scanner.
  * Brand farver: Navy #1A1F3D, Teal #028090, Mint #00C9A7, Ice #E8F4F8
  */
@@ -132,7 +132,7 @@ export function Mascot({
         fontWeight="800"
         fontFamily="system-ui, sans-serif"
       >
-        CL
+        RL
       </text>
 
       {/* Hat stripes */}
@@ -277,7 +277,7 @@ export function MascotHead({ className = "w-10 h-10" }: { className?: string }) 
       <circle cx="40" cy="6" r="6" fill="#00C9A7" />
       <circle cx="38" cy="4.5" r="1.5" fill="#00B896" opacity="0.5" />
       <circle cx="43" cy="7" r="1.5" fill="#00B896" opacity="0.5" />
-      <text x="40" y="25" textAnchor="middle" fill="#00C9A7" fontSize="8" fontWeight="800" fontFamily="system-ui, sans-serif">CL</text>
+      <text x="40" y="25" textAnchor="middle" fill="#00C9A7" fontSize="8" fontWeight="800" fontFamily="system-ui, sans-serif">RL</text>
     </svg>
   );
 }
@@ -322,7 +322,7 @@ export function MascotPeek({ className = "w-32", side = "right" }: { className?:
       <path d="M38 36 C38 30 44 18 65 16 C86 18 92 30 92 36 L88 38 C88 38 80 35 65 35 C50 35 42 38 42 38 Z" fill="#1A1F3D" />
       <path d="M40 36 C40 36 48 39 65 39 C82 39 90 36 90 36 C90 36 84 33 65 33 C46 33 40 36 40 36Z" fill="#028090" />
       <circle cx="65" cy="11" r="6" fill="#00C9A7" />
-      <text x="65" y="29" textAnchor="middle" fill="#00C9A7" fontSize="7" fontWeight="800" fontFamily="system-ui, sans-serif">CL</text>
+      <text x="65" y="29" textAnchor="middle" fill="#00C9A7" fontSize="7" fontWeight="800" fontFamily="system-ui, sans-serif">RL</text>
 
       {/* Waving hand */}
       <circle cx="38" cy="70" r="7" fill="#FBBF7C" />
