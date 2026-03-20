@@ -12,6 +12,7 @@ function Nav() {
     { href: "#fordele", label: "Fordele" },
     { href: "#saadan-virker-det", label: "Sådan virker det" },
     { href: "#white-label", label: "White Label" },
+    { href: "#api", label: "API" },
     { href: "#priser", label: "Priser" },
   ];
 
@@ -552,6 +553,155 @@ function AccessModel() {
   );
 }
 
+/* ─────────────── API & Integrations ─────────────── */
+function ApiIntegration() {
+  const integrations = [
+    {
+      name: "Dalux FM",
+      desc: "Synkronisér anlægsdata og servicehistorik direkte med Dalux drift- og vedligeholdelsesmodul.",
+      color: "bg-teal",
+    },
+    {
+      name: "Facit",
+      desc: "Push journalposter og compliance-status til Facit for samlet overblik over ejendomsporteføljen.",
+      color: "bg-navy",
+    },
+    {
+      name: "Planon",
+      desc: "Automatisk overførsel af inspektionsdata og PED-dokumentation til Planon IWMS.",
+      color: "bg-teal-600",
+    },
+    {
+      name: "Archibus",
+      desc: "Kobl køleanlægsdata sammen med jeres Archibus asset management-setup.",
+      color: "bg-navy-400",
+    },
+    {
+      name: "Spacewell",
+      desc: "Integrer eftersyn og compliance-rapporter i Spacewells IoT-baserede driftsplatform.",
+      color: "bg-mint-700",
+    },
+    {
+      name: "Jeres eget system",
+      desc: "Åben REST API med fuld dokumentation — byg den integration I har brug for.",
+      color: "bg-mint",
+    },
+  ];
+
+  return (
+    <section id="api" className="py-20 md:py-28 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-navy mb-4">
+            Åben API — klar til jeres FM-system
+          </h2>
+          <p className="text-lg text-navy-400 max-w-2xl mx-auto">
+            RefiLog er bygget API-first. Alle data kan trækkes ud og sendes til
+            den FM-løsning I allerede bruger — eller jeres eget system.
+          </p>
+        </div>
+
+        {/* API highlights */}
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {[
+            {
+              icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+                </svg>
+              ),
+              title: "REST API",
+              desc: "Veldokumenteret RESTful API med JSON-svar, paginering og filtrering. OAuth 2.0 og API-nøgler.",
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+                </svg>
+              ),
+              title: "Webhooks",
+              desc: "Real-time notifikationer ved nye journalposter, statusændringer og compliance-hændelser.",
+            },
+            {
+              icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                </svg>
+              ),
+              title: "Bulk eksport",
+              desc: "Eksportér hele anlægsflåden med historik som JSON eller CSV — klar til jeres data warehouse.",
+            },
+          ].map((f) => (
+            <div
+              key={f.title}
+              className="bg-ice/50 rounded-2xl p-6 border border-navy-50/40 hover:shadow-md hover:border-teal/30 transition-all group"
+            >
+              <div className="w-12 h-12 bg-teal/10 rounded-xl flex items-center justify-center text-teal mb-4 group-hover:bg-teal group-hover:text-white transition-colors">
+                {f.icon}
+              </div>
+              <h3 className="text-lg font-bold text-navy mb-2">{f.title}</h3>
+              <p className="text-sm text-navy-400 leading-relaxed">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* FM integrations */}
+        <div className="text-center mb-8">
+          <p className="text-sm font-bold text-teal uppercase tracking-wider">
+            Integrerer med de FM-systemer I kender
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          {integrations.map((i) => (
+            <div
+              key={i.name}
+              className="flex items-start gap-3 bg-white rounded-xl p-4 border border-navy-50/40 hover:border-teal/30 transition-all"
+            >
+              <div className={`w-3 h-3 ${i.color} rounded-full mt-1.5 flex-shrink-0`} />
+              <div>
+                <p className="text-sm font-bold text-navy">{i.name}</p>
+                <p className="text-xs text-navy-400 leading-relaxed mt-0.5">{i.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* API code preview */}
+        <div className="mt-12 max-w-2xl mx-auto">
+          <div className="bg-navy rounded-2xl overflow-hidden shadow-xl">
+            <div className="flex items-center gap-2 px-4 py-3 bg-navy-500/50 border-b border-white/10">
+              <div className="w-3 h-3 rounded-full bg-red-400/60" />
+              <div className="w-3 h-3 rounded-full bg-amber-400/60" />
+              <div className="w-3 h-3 rounded-full bg-green-400/60" />
+              <span className="text-xs text-navy-200 ml-2 font-mono">GET /api/v1/equipment</span>
+            </div>
+            <pre className="px-5 py-4 text-sm font-mono text-teal-200 overflow-x-auto">
+              <code>{`{
+  "equipment": {
+    "id": "KL-4821",
+    "serial": "CR-30XA-2019-04821",
+    "manufacturer": "Carrier",
+    "model": "30XA-452",
+    "refrigerant": "R410A",
+    "charge_kg": 12.5,
+    "ped_category": "II",
+    "next_inspection": "2026-06-02",
+    "journal_entries": 47,
+    "compliance_status": "ok"
+  }
+}`}</code>
+            </pre>
+          </div>
+          <p className="text-center text-xs text-navy-300 mt-3">
+            Fuldt dokumenteret API med interaktiv Swagger-docs
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─────────────── Pricing ─────────────── */
 function Pricing() {
   return (
@@ -766,6 +916,7 @@ export default function Home() {
       <HowItWorks />
       <WhiteLabel />
       <AccessModel />
+      <ApiIntegration />
       <Pricing />
       <CTA />
       <Footer />
