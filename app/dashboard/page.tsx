@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { LogoIcon } from "@/components/Icons";
+import { LogoIcon, Wordmark } from "@/components/Icons";
 import { MascotHead } from "@/components/Mascot";
 import { useRouter } from "next/navigation";
 
@@ -96,7 +96,7 @@ export default function DashboardPage() {
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <LogoIcon className="w-7 h-7" />
-            <span className="text-base font-bold text-navy">RefiLog</span>
+            <Wordmark className="text-base" />
             {user.company && (
               <span className="text-[10px] bg-teal/10 text-teal font-semibold px-2 py-0.5 rounded-full ml-1">
                 {user.company.name}

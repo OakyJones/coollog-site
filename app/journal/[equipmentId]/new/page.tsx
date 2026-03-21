@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { LogoIcon } from "@/components/Icons";
+import { LogoIcon, Wordmark } from "@/components/Icons";
 import { useParams, useRouter } from "next/navigation";
 
 const ENTRY_TYPES = [
@@ -69,7 +69,7 @@ export default function NewEntryPage() {
         <div className="max-w-lg mx-auto px-4 h-14 flex items-center">
           <a href="/dashboard" className="flex items-center gap-2">
             <LogoIcon className="w-7 h-7" />
-            <span className="text-base font-bold text-navy">RefiLog</span>
+            <Wordmark className="text-base" />
           </a>
         </div>
       </div>

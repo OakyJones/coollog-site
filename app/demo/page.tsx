@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { LogoIcon } from "@/components/Icons";
+import { LogoIcon, Wordmark } from "@/components/Icons";
 import { MascotHead } from "@/components/Mascot";
 
 /* ─── Dummy data ─── */
@@ -33,7 +33,7 @@ const HISTORY = [
     technician: "Mikkel Petersen",
     company: "KølePartner ApS",
     notes: "Elektronisk lækagesøgning udført. Ingen lækager detekteret.",
-    color: "mint",
+    color: "sage",
   },
   {
     type: "Reparation",
@@ -58,7 +58,7 @@ const HISTORY = [
     technician: "Anders Nielsen",
     company: "Nordisk Køl A/S",
     notes: "Lækagekontrol iht. F-gasforordningen. Ingen fund.",
-    color: "mint",
+    color: "sage",
   },
 ];
 
@@ -140,7 +140,7 @@ export default function DemoPage() {
       company: "KølePartner ApS",
       notes,
       refrigerant_added: addedKg ? parseFloat(addedKg) : undefined,
-      color: entryType === "eftersyn" ? "teal" : entryType === "laekagekontrol" ? "mint" : "navy",
+      color: entryType === "eftersyn" ? "teal" : entryType === "laekagekontrol" ? "sage" : "navy",
     };
     setTimeout(() => {
       setNewEntry(entry as typeof HISTORY[0]);

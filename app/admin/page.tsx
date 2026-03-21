@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { LogoIcon } from "@/components/Icons";
+import { LogoIcon, Wordmark } from "@/components/Icons";
 
 type Company = {
   id: string;
@@ -87,7 +87,7 @@ export default function AdminPage() {
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <LogoIcon className="w-7 h-7" />
-            <span className="text-base font-bold text-navy">RefiLog</span>
+            <Wordmark className="text-base" />
             <span className="text-xs bg-navy text-white px-2 py-0.5 rounded-full font-medium ml-2">Admin</span>
           </div>
           <a href="/dashboard" className="text-sm text-teal font-medium hover:underline">
@@ -103,7 +103,7 @@ export default function AdminPage() {
         <div className="flex gap-2 mb-6">
           {([
             { key: "pending", label: "Afventer", color: "amber" },
-            { key: "approved", label: "Godkendt", color: "mint" },
+            { key: "approved", label: "Godkendt", color: "sage" },
             { key: "rejected", label: "Afvist", color: "red" },
           ] as const).map(({ key, label }) => (
             <button
@@ -187,7 +187,7 @@ export default function AdminPage() {
                       <button
                         onClick={() => handleAction(company.id, "approve")}
                         disabled={actionLoading === company.id}
-                        className="px-5 py-2.5 bg-mint text-white rounded-xl text-sm font-bold hover:bg-mint/80 transition-colors disabled:opacity-50"
+                        className="px-5 py-2.5 bg-sage text-white rounded-xl text-sm font-bold hover:bg-sage/80 transition-colors disabled:opacity-50"
                       >
                         {actionLoading === company.id ? "..." : "Godkend"}
                       </button>
@@ -202,7 +202,7 @@ export default function AdminPage() {
                   )}
 
                   {tab === "approved" && (
-                    <div className="flex items-center gap-2 text-mint">
+                    <div className="flex items-center gap-2 text-sage">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>

@@ -69,6 +69,14 @@ async function main() {
     },
   });
 
+  const keggi = await prisma.user.create({
+    data: {
+      email: "keggi@refilog.dk",
+      name: "Keggi",
+      role: "superadmin",
+    },
+  });
+
   const mikkel = await prisma.user.create({
     data: {
       email: "mikkel@kolepartner.dk",

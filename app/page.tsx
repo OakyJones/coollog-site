@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { LogoIcon } from "@/components/Icons";
+import { LogoIcon, Wordmark } from "@/components/Icons";
 import { Mascot, MascotHead, MascotPeek } from "@/components/Mascot";
 import { ProcessAnimation, ProcessAnimationStyles } from "@/components/ProcessAnimation";
 
@@ -21,7 +21,7 @@ function Nav() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
           <LogoIcon className="w-9 h-9" />
-          <span className="text-xl font-bold text-navy">RefiLog</span>
+          <Wordmark className="text-xl" />
         </a>
 
         {/* Desktop */}
@@ -37,7 +37,7 @@ function Nav() {
           ))}
           <a
             href="/demo"
-            className="px-5 py-2.5 bg-mint text-navy text-sm font-bold rounded-lg hover:bg-mint-400 transition-colors"
+            className="px-5 py-2.5 bg-sage text-navy text-sm font-bold rounded-lg hover:bg-sage-400 transition-colors"
           >
             Prøv demo
           </a>
@@ -80,7 +80,7 @@ function Nav() {
           ))}
           <a
             href="/demo"
-            className="block w-full text-center px-5 py-2.5 bg-mint text-navy text-sm font-bold rounded-lg"
+            className="block w-full text-center px-5 py-2.5 bg-sage text-navy text-sm font-bold rounded-lg"
             onClick={() => setOpen(false)}
           >
             Prøv demo
@@ -104,13 +104,13 @@ function Hero() {
     <section className="gradient-hero pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
       {/* Decorative circles */}
       <div className="absolute top-20 -right-32 w-96 h-96 bg-teal/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-mint/15 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-sage/15 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto px-6 relative">
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 rounded-full mb-6">
-            <span className="w-2 h-2 bg-mint rounded-full animate-pulse" />
-            <span className="text-mint text-sm font-medium">
+            <span className="w-2 h-2 bg-sage rounded-full animate-pulse" />
+            <span className="text-sage text-sm font-medium">
               Digital udstyrsjournal til kølefirmaer
             </span>
           </div>
@@ -118,7 +118,7 @@ function Hero() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
             Skrot papirjournalen.
             <br />
-            <span className="text-mint">Scan, log, done.</span>
+            <span className="text-sage">Scan, log, done.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-teal-200 leading-relaxed mb-10 max-w-2xl">
@@ -130,7 +130,7 @@ function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="/demo"
-              className="inline-flex items-center justify-center px-8 py-4 bg-mint text-navy font-bold rounded-xl hover:bg-mint-400 transition-colors text-base"
+              className="inline-flex items-center justify-center px-8 py-4 bg-sage text-navy font-bold rounded-xl hover:bg-sage-400 transition-colors text-base"
             >
               Prøv det selv
             </a>
@@ -236,8 +236,8 @@ function Problem() {
               "Alt samlet ét sted — klar til tilsyn med ét klik",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <div className="mt-1 w-5 h-5 rounded-full bg-mint/15 flex items-center justify-center flex-shrink-0">
-                  <svg className="w-3 h-3 text-mint" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <div className="mt-1 w-5 h-5 rounded-full bg-sage/15 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-3 h-3 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>

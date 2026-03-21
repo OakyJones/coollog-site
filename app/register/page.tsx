@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { LogoIcon } from "@/components/Icons";
+import { LogoIcon, Wordmark } from "@/components/Icons";
 import { MascotHead } from "@/components/Mascot";
 
 type CvrResult = {
@@ -106,7 +106,7 @@ export default function RegisterPage() {
         <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
             <LogoIcon className="w-7 h-7" />
-            <span className="text-base font-bold text-navy">RefiLog</span>
+            <Wordmark className="text-base" />
           </a>
           <a href="/login" className="text-sm text-teal font-medium hover:underline">
             Log ind
@@ -219,8 +219,8 @@ export default function RegisterPage() {
                   </div>
 
                   {cvrData.autoApproved && (
-                    <div className="mt-4 bg-mint/10 border border-mint/30 rounded-xl px-4 py-3 flex items-center gap-2">
-                      <svg className="w-5 h-5 text-mint flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <div className="mt-4 bg-sage/10 border border-sage/30 rounded-xl px-4 py-3 flex items-center gap-2">
+                      <svg className="w-5 h-5 text-sage flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       <p className="text-xs text-navy">
@@ -308,9 +308,9 @@ export default function RegisterPage() {
         {step === "done" && result && (
           <div className="space-y-6">
             <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-4 bg-mint/10 rounded-full flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-4 bg-sage/10 rounded-full flex items-center justify-center">
                 {result.autoApproved ? (
-                  <svg className="w-10 h-10 text-mint" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-10 h-10 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 ) : (

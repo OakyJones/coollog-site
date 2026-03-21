@@ -2,25 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 html {
   scroll-behavior: smooth;
 }
 
 @layer base {
   body {
-    @apply bg-white text-navy antialiased;
+    @apply bg-white text-navy antialiased font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
 }
 
 @layer utilities {
   .gradient-hero {
-    background: linear-gradient(135deg, #1A1F3D 0%, #028090 100%);
+    background: linear-gradient(135deg, #0C1B2A 0%, #1B2D42 50%, #1F7A8C 100%);
   }
 
-  .gradient-mint {
-    background: linear-gradient(135deg, #028090 0%, #00C9A7 100%);
+  .gradient-sage {
+    background: linear-gradient(135deg, #1F7A8C 0%, #48A9A6 100%);
   }
 
   .glass {

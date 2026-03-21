@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { LogoIcon } from "@/components/Icons";
+import { LogoIcon, Wordmark } from "@/components/Icons";
 import { useParams, useRouter } from "next/navigation";
 
 interface Entry {
@@ -31,7 +31,7 @@ interface EquipmentData {
 
 const typeColors: Record<string, string> = {
   eftersyn: "teal",
-  laekagekontrol: "mint",
+  laekagekontrol: "sage",
   reparation: "navy",
   sikkerhedsventil: "navy",
   ibrugtagning: "teal",
@@ -85,7 +85,7 @@ export default function JournalPage() {
         <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
           <a href="/dashboard" className="flex items-center gap-2">
             <LogoIcon className="w-7 h-7" />
-            <span className="text-base font-bold text-navy">RefiLog</span>
+            <Wordmark className="text-base" />
           </a>
           {user && (
             <span className="text-xs text-navy-300">{user.name}</span>
@@ -156,8 +156,8 @@ export default function JournalPage() {
                     className={`px-4 py-3 ${
                       color === "teal"
                         ? "border-l-teal bg-teal/[0.03]"
-                        : color === "mint"
-                          ? "border-l-mint bg-mint/[0.03]"
+                        : color === "sage"
+                          ? "border-l-sage bg-sage/[0.03]"
                           : "border-l-navy bg-navy/[0.02]"
                     }`}
                     style={{ borderLeftWidth: 3 }}
@@ -167,8 +167,8 @@ export default function JournalPage() {
                         className={`text-xs font-bold ${
                           color === "teal"
                             ? "text-teal"
-                            : color === "mint"
-                              ? "text-mint-700"
+                            : color === "sage"
+                              ? "text-sage-700"
                               : "text-navy"
                         }`}
                       >
