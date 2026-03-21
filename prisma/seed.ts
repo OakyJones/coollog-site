@@ -27,16 +27,26 @@ async function main() {
   const kp = await prisma.company.create({
     data: {
       name: "KølePartner ApS",
+      cvr: "12345678",
+      branchCode: "432200",
+      branchText: "VVS- og blikkenslagerforretninger",
       domain: "journal.kolepartner.dk",
       color: "#028090",
+      status: "approved",
+      approvedAt: new Date(),
     },
   });
 
   const nk = await prisma.company.create({
     data: {
       name: "Nordisk Køl A/S",
+      cvr: "87654321",
+      branchCode: "432200",
+      branchText: "VVS- og blikkenslagerforretninger",
       domain: "journal.nordiskkol.dk",
       color: "#2563EB",
+      status: "approved",
+      approvedAt: new Date(),
     },
   });
 
@@ -48,6 +58,14 @@ async function main() {
       phone: "+45 20 12 34 56",
       role: "admin",
       companyId: kp.id,
+    },
+  });
+
+  const jonasReal = await prisma.user.create({
+    data: {
+      email: "jonas@kjaerfam.dk",
+      name: "Jonas Kjær",
+      role: "superadmin",
     },
   });
 

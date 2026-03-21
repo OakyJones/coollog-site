@@ -73,11 +73,18 @@ function LoginContent() {
         return;
       }
 
-      // Redirect to journal or dashboard
+      // Redirect based on context and role
       if (equipmentId) {
         router.push(`/journal/${equipmentId}`);
       } else {
-        router.push("/dashboard");
+        // Check role to redirect superadmin to admin panel
+        const sessionRes = await fetch("/api/auth/session");
+        const sessionData = await sessionRes.json();
+        if (sessionData.user?.role === "superadmin") {
+          router.push("/admin");
+        } else {
+          router.push("/dashboard");
+        }
       }
     } catch {
       setError("Netværksfejl");
@@ -124,7 +131,8 @@ function LoginContent() {
               )}
 
               <p className="text-[11px] text-navy-300 mt-3">
-                Test-brugere: jonas@kolepartner.dk (admin), mikkel@kolepartner.dk (tekniker)
+                Nyt kølefirma?{" "}
+                <a href="/register" className="text-teal hover:underline">Registrer her</a>
               </p>
             </div>
 

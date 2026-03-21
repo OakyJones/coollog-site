@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({
     success: true,
     message: "OTP sendt til din email",
-    // MVP: return code for easy testing (remove in production!)
-    _dev_code: process.env.NODE_ENV !== "production" ? code : undefined,
+    // MVP: return code until email service is configured (remove when SMTP is set up!)
+    _dev_code: code,
   });
 }

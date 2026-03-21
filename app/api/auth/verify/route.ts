@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 import { verifyOtp } from "@/lib/auth";
 
 export async function POST(req: NextRequest) {
@@ -6,6 +7,26 @@ export async function POST(req: NextRequest) {
 
   if (!email || !code) {
     return NextResponse.json({ error: "Email og kode kræves" }, { status: 400 });
+  }
+
+  // Tjek om brugerens firma er godkendt (før vi bruger OTP'en)
+  const user = await prisma.user.findUnique({
+    where: { email },
+    include: { company: true },
+  });
+
+  if (user?.company && user.company.status === "pending") {
+    return NextResponse.json(
+      { error: "Dit firma afventer godkendelse. Du får besked på email." },
+      { status: 403 }
+    );
+  }
+
+  if (user?.company && user.company.status === "rejected") {
+    return NextResponse.json(
+      { error: "Dit firma er blevet afvist. Kontakt support." },
+      { status: 403 }
+    );
   }
 
   const result = await verifyOtp(email, code);
